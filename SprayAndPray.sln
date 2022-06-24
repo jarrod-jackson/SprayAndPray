@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SprayAndPrayWeb", "SprayAndPrayWeb\SprayAndPrayWeb.csproj", "{C0B361E0-0FA4-4DB2-9CD5-51047CBFA812}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0B361E0-0FA4-4DB2-9CD5-51047CBFA812}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0B361E0-0FA4-4DB2-9CD5-51047CBFA812}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0B361E0-0FA4-4DB2-9CD5-51047CBFA812}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0B361E0-0FA4-4DB2-9CD5-51047CBFA812}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66774F40-41AF-424B-A6BB-2267D142D8AA}
+	EndGlobalSection
+EndGlobal
