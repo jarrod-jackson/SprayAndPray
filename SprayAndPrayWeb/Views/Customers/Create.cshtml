@@ -9,22 +9,27 @@
         <div class="mb-3">
             <label asp-for="FirstName">First Name</label>
             <input asp-for="FirstName" class=form-control />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
         </div>
         <div class="mb-3">
             <label asp-for="LastName">Last Name</label>
             <input asp-for="LastName" class=form-control />
+            <span asp-validation-for="LastName" class="text-danger"></span>
         </div>
         <div class="mb-3">
             <label asp-for="PhoneNumber">Phone Number</label>
             <input asp-for="PhoneNumber" class=form-control />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
         </div>
         <div class="mb-3">
             <label asp-for="Address">Address</label>
             <input asp-for="Address" class=form-control />
+            <span asp-validation-for="Address" class="text-danger"></span>
         </div>
         <div class="mb-3">
             <label asp-for="Email">Email Address</label>
             <input asp-for="Email" class=form-control />
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
         <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
         <a asp-controller="Customers" asp-action="Index" class="btn btn-secondary" style="width:150px">

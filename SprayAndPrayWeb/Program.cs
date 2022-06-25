@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using SprayAndPrayWeb.Business;
 using SprayAndPrayWeb.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")
     ));
+
+builder.Services.AddScoped<ICustomerManager, CustomerManager>();
 
 var app = builder.Build();
 
