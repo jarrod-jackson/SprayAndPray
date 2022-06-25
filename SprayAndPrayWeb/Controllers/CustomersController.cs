@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SprayAndPrayWeb.Business;
 using SprayAndPrayWeb.Data;
 using SprayAndPrayWeb.Models;
 
@@ -8,6 +9,7 @@ namespace SprayAndPrayWeb.Controllers
     {
         private readonly ApplicationDbContext _dbContext;
         private readonly IConfiguration _configuration;
+        private readonly ICustomerManager _customerManager;
 
         /// <summary>
         ///     Designated Constructor
@@ -16,10 +18,12 @@ namespace SprayAndPrayWeb.Controllers
         /// <param name="configuration">configuration</param>
         public CustomersController(
             ApplicationDbContext dbContext,
-            IConfiguration configuration)
+            IConfiguration configuration,
+            ICustomerManager customerManager)
         {
             _dbContext = dbContext;
             _configuration = configuration;
+            _customerManager = customerManager;
         }
 
         /// <summary>
@@ -50,9 +54,14 @@ namespace SprayAndPrayWeb.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Customer customer)
         {
-            _dbContext.Customer.Add(customer);
-            _dbContext.SaveChanges();
-            return RedirectToAction("Index");
+            if(ModelState.IsValid)
+            {
+                _customerManager.SaveCustomerInput(customer);
+
+                return RedirectToAction("Index");
+            }
+            return View(customer);
+            
         }
     }
 }
