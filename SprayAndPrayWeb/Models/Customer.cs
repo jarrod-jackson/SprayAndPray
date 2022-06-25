@@ -2,7 +2,7 @@
 
 namespace SprayAndPrayWeb.Models
 {
-    public class Customers
+    public class Customer
     {
         /// <summary>
         ///     Id: Primary Key and Identity column
@@ -11,10 +11,16 @@ namespace SprayAndPrayWeb.Models
         public int Id { get; set; }
 
         /// <summary>
-        ///     Customer Name: Required field
+        ///     Customer First: Required field
         /// </summary>
         [Required]
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+
+        /// <summary>
+        ///     Customer Last: Required field
+        /// </summary>
+        [Required]
+        public string LastName { get; set; }
 
         /// <summary>
         ///     Customer Phone Number
