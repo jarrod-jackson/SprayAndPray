@@ -8,7 +8,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
 // Allow DbContext to use SQL Server and configure connection string
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
+builder.Services.AddDbContext<ApplicationDbContext>(options => 
+options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")
     ));
 
