@@ -14,6 +14,6 @@ namespace SprayAndPrayWeb.Data
             // Chill
         }
 
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<Customers> Customers { get; set; }
     }
 }
