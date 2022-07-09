@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SprayAndPray.Business;
 using SprayAndPray.DAL;
+using SprayAndPray.DAL.Data.Repository.IRepository;
 using SprayAndPray.Models;
 using SprayAndPrayWeb.Constants;
 
