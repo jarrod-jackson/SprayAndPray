@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SprayAndPrayWeb.Business;
+using SprayAndPrayWeb.Constants;
 using SprayAndPrayWeb.Data;
 using SprayAndPrayWeb.Models;
 
@@ -60,6 +61,7 @@ namespace SprayAndPrayWeb.Controllers
             if (ModelState.IsValid)
             {
                 _customerManager.SaveCustomerInput(customer);
+                TempData["success"] = Messages.CreateCustomerSuccess;
 
                 return RedirectToAction("Index");
             }
@@ -96,6 +98,7 @@ namespace SprayAndPrayWeb.Controllers
             if (ModelState.IsValid)
             {
                 _customerManager.UpdateCustomerInput(customer);
+                TempData["success"] = Messages.EditCustomerSuccess;
 
                 return RedirectToAction("Index");
             }
@@ -140,6 +143,7 @@ namespace SprayAndPrayWeb.Controllers
             }
 
             _customerManager.DeleteCustomer(customer);
+            TempData["success"] = Messages.DeleteCustomerSuccess;
 
             return RedirectToAction("Index");
         }
