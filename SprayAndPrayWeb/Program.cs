@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using SprayAndPray.Business;
 using SprayAndPray.DAL;
+using SprayAndPray.DAL.Data.Repository;
+using SprayAndPray.DAL.Data.Repository.IRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,8 @@ options.UseSqlServer(
 
 builder.Services.AddScoped<ICustomerManager, CustomerManager>();
 builder.Services.AddScoped<ICustomerHandler, CustomerHandler>();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IDatabase, Database>();
 
 var app = builder.Build();
 
