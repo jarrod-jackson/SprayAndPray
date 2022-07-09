@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace SprayAndPrayWeb.Models
 {
@@ -14,23 +15,29 @@ namespace SprayAndPrayWeb.Models
         ///     Customer First: Required field
         /// </summary>
         [Required]
+        [DisplayName("First Name")]
         public string FirstName { get; set; }
 
         /// <summary>
         ///     Customer Last: Required field
         /// </summary>
         [Required]
+        [DisplayName("Last Name")]
         public string LastName { get; set; }
 
         /// <summary>
         ///     Customer Phone Number
         /// </summary>
         [Required]
+        [DisplayName("Phone Number")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
         public string PhoneNumber { get; set; }
 
         /// <summary>
         ///     Customer email
         /// </summary>
+        [EmailAddress]
         public string Email { get; set; } = string.Empty;
 
         /// <summary>

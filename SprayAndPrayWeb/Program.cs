@@ -15,6 +15,7 @@ options.UseSqlServer(
     ));
 
 builder.Services.AddScoped<ICustomerManager, CustomerManager>();
+builder.Services.AddScoped<ICustomerHandler, CustomerHandler>();
 
 var app = builder.Build();
 

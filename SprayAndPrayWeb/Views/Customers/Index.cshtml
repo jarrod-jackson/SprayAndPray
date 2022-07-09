@@ -18,10 +18,10 @@
     <table class="table table-bordered table-striped" style="width:100%">
         <thead>
             <tr>
-                <th width="10%">
+                <th width="15%">
                     First Name
                 </th>
-                <th width="10%">
+                <th width="15%">
                     Last Name
                 </th>
                 <th width="15%">
@@ -33,26 +33,52 @@
                 <th width="35%">
                     Email Address
                 </th>
+                <th width="5">
+                    Edit
+                </th>
+                <th width="5">
+                    Delete
+                </th>
             </tr>
         </thead>
         <tbody>
             @foreach(var customer in Model)
             {
                 <tr>
-                    <td width="20%">
+                    <td>
                         @customer.FirstName
                     </td>
-                    <td width="20%">
+                    <td>
                         @customer.LastName
                     </td>
-                    <td width="15%">
+                    <td>
                         @customer.PhoneNumber
                     </td>
-                    <td width="35%">
+                    <td>
                         @customer.Address
                     </td>
-                    <td width="35%">
+                    <td>
                         @customer.Email
+                    </td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="Customers" 
+                               asp-action="Edit" 
+                               asp-route-id="@customer.Id"
+                               class="btn btn-primary mx-1"> 
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="Customers"
+                               asp-action="Delete"
+                               asp-route-id="@customer.Id"
+                               class="btn btn-danger mx-1">
+                               <i class="bi bi-trash3"></i>
+                            </a>
+                        </div>
                     </td>
                 </tr>
             }
