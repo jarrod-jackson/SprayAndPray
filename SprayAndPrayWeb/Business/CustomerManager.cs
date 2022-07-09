@@ -40,5 +40,15 @@ namespace SprayAndPrayWeb.Business
             _dbContext.Customer.Remove(customer);
             _dbContext.SaveChanges();
         }
+
+        public Customer GetCustomerById(int? id)
+        {
+            return _dbContext.Customer.FirstOrDefault(x => x.Id == id) ?? new Customer();
+        }
+
+        public IEnumerable<Customer>GetCustomers()
+        {
+            return _dbContext.Customer.AsEnumerable();
+        }
     }
 }
