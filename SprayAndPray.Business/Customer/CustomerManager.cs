@@ -1,7 +1,7 @@
-﻿using SprayAndPrayWeb.Data;
-using SprayAndPrayWeb.Models;
+﻿using SprayAndPray.DAL;
+using SprayAndPray.Models;
 
-namespace SprayAndPrayWeb.Business
+namespace SprayAndPray.Business
 {
     /// <summary>
     ///     Manager for Customer add/edit/delete

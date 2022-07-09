@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using SprayAndPrayWeb.Logging;
+﻿using SprayAndPrayWeb.Logging;
 using System.Diagnostics;
 using System.Net;
 using System.Web.Http;

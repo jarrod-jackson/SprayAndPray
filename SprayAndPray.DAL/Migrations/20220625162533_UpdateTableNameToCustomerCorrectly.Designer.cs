@@ -2,18 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SprayAndPrayWeb.Data;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace SprayAndPrayWeb.Migrations
+namespace SprayAndPray.DAL
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220625162533_UpdateTableNameToCustomerCorrectly")]
+    partial class UpdateTableNameToCustomerCorrectly
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

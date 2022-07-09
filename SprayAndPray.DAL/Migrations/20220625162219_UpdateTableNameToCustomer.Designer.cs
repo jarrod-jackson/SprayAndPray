@@ -2,18 +2,15 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SprayAndPrayWeb.Data;
 
 #nullable disable
 
-namespace SprayAndPrayWeb.Migrations
+namespace SprayAndPray.DAL
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220625160636_IncludeFirstLastNameInCustomersTable")]
-    partial class IncludeFirstLastNameInCustomersTable
+    [Migration("20220625162219_UpdateTableNameToCustomer")]
+    partial class UpdateTableNameToCustomer
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,7 +21,7 @@ namespace SprayAndPrayWeb.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("SprayAndPrayWeb.Models.Customers", b =>
+            modelBuilder.Entity("SprayAndPrayWeb.Models.Customer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

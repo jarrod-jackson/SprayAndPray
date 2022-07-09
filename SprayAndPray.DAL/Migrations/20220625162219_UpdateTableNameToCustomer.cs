@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace SprayAndPrayWeb.Migrations
+namespace SprayAndPray.DAL
 {
     public partial class UpdateTableNameToCustomer : Migration
     {

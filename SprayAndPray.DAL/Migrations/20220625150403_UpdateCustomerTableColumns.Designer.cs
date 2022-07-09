@@ -2,18 +2,15 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SprayAndPrayWeb.Data;
 
 #nullable disable
 
-namespace SprayAndPrayWeb.Migrations
+namespace SprayAndPray.DAL
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220625162533_UpdateTableNameToCustomerCorrectly")]
-    partial class UpdateTableNameToCustomerCorrectly
+    [Migration("20220625150403_UpdateCustomerTableColumns")]
+    partial class UpdateCustomerTableColumns
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,7 +21,7 @@ namespace SprayAndPrayWeb.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("SprayAndPrayWeb.Models.Customer", b =>
+            modelBuilder.Entity("SprayAndPrayWeb.Models.Customers", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -43,11 +40,7 @@ namespace SprayAndPrayWeb.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -57,7 +50,7 @@ namespace SprayAndPrayWeb.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customer");
+                    b.ToTable("Customers");
                 });
 #pragma warning restore 612, 618
         }

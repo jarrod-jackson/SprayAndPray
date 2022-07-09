@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace SprayAndPrayWeb.Models
+namespace SprayAndPray.Models
 {
     public class Customer
     {
