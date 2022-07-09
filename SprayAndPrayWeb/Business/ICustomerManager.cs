@@ -21,5 +21,18 @@ namespace SprayAndPrayWeb.Business
         /// </summary>
         /// <param name="customer">Customer Dto</param>
         public void DeleteCustomer(Customer customer);
+
+        /// <summary>
+        ///     Gets first or default customer by ID
+        /// </summary>
+        /// <param name="id">customer ID</param>
+        /// <returns>Customer Dto</returns>
+        public Customer GetCustomerById(int? id);
+
+        /// <summary>
+        ///     Get all customers
+        /// </summary>
+        /// <returns>IEnumerable of Customers</returns>
+        public IEnumerable<Customer> GetCustomers();
     }
 }

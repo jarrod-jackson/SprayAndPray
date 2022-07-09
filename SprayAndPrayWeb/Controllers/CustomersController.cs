@@ -18,6 +18,8 @@ namespace SprayAndPrayWeb.Controllers
         /// </summary>
         /// <param name="dbContext">db context</param>
         /// <param name="configuration">configuration</param>
+        /// <param name="customerManager">customer manager class</param>
+        /// <param name="customerHandler">customer handler class</param>
         public CustomersController(
             ApplicationDbContext dbContext,
             IConfiguration configuration,
@@ -36,7 +38,7 @@ namespace SprayAndPrayWeb.Controllers
         /// <returns></returns>
         public IActionResult Index()
         {
-            var customerList = _dbContext.Customer.AsEnumerable();
+            var customerList = _customerManager.GetCustomers();
 
             return View(customerList);
         }
@@ -75,7 +77,7 @@ namespace SprayAndPrayWeb.Controllers
         /// <returns></returns>
         public IActionResult Edit(int? id)
         {
-            var customer = _dbContext.Customer.FirstOrDefault(x => x.Id == id);
+            var customer = _customerManager.GetCustomerById(id);
 
             var hasValidCustomerOrId = _customerHandler.ValidateCustomerUpdate(customer, id);
 
@@ -128,16 +130,16 @@ namespace SprayAndPrayWeb.Controllers
         }
 
         /// <summary>
-        ///     Post - Edit Customer Page
+        ///     Post - Delete Customer
         /// </summary>
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteCustomer(int? id)
         {
-            var customer = _dbContext.Customer.FirstOrDefault(x => x.Id == id);
+            var customer = _customerManager.GetCustomerById(id);
 
-            if(customer == null)
+            if (customer == null)
             {
                 return NotFound();
             }
