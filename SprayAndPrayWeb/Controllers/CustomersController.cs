@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SprayAndPrayWeb.Business;
+using SprayAndPray.Business;
+using SprayAndPray.DAL;
+using SprayAndPray.Models;
 using SprayAndPrayWeb.Constants;
-using SprayAndPrayWeb.Data;
-using SprayAndPrayWeb.Models;
 
 namespace SprayAndPrayWeb.Controllers
 {

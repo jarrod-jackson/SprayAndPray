@@ -1,4 +1,4 @@
-namespace SprayAndPrayWeb.Models
+namespace SprayAndPray.Models
 {
     public class ErrorViewModel
     {

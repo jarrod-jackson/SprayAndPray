@@ -1,6 +1,6 @@
-﻿using SprayAndPrayWeb.Models;
+﻿using SprayAndPray.Models;
 
-namespace SprayAndPrayWeb.Business
+namespace SprayAndPray.Business
 {
     /// <summary>
     ///     Class to handle user i/o for Customer

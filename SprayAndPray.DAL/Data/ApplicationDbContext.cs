@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SprayAndPrayWeb.Models;
+using SprayAndPray.Models;
 
-namespace SprayAndPrayWeb.Data
+namespace SprayAndPray.DAL
 {
     public class ApplicationDbContext : DbContext
     {

@@ -1,6 +1,6 @@
-﻿using SprayAndPrayWeb.Models;
+﻿using SprayAndPray.Models;
 
-namespace SprayAndPrayWeb.Business
+namespace SprayAndPray.Business
 {
     public interface ICustomerHandler
     {

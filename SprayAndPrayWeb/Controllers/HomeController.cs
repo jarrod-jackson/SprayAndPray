@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SprayAndPrayWeb.Models;
+using SprayAndPray.Models;
 using System.Diagnostics;
 
 namespace SprayAndPrayWeb.Controllers

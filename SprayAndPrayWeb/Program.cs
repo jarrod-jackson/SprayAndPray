@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using SprayAndPrayWeb.Business;
-using SprayAndPrayWeb.Data;
+using SprayAndPray.Business;
+using SprayAndPray.DAL;
 
 var builder = WebApplication.CreateBuilder(args);
 
