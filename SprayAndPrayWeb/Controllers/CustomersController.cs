@@ -9,26 +9,18 @@ namespace SprayAndPrayWeb.Controllers
 {
     public class CustomersController : Controller
     {
-        private readonly ApplicationDbContext _dbContext;
-        private readonly IConfiguration _configuration;
         private readonly ICustomerManager _customerManager;
         private readonly ICustomerHandler _customerHandler;
 
         /// <summary>
         ///     Designated Constructor
         /// </summary>
-        /// <param name="dbContext">db context</param>
-        /// <param name="configuration">configuration</param>
         /// <param name="customerManager">customer manager class</param>
         /// <param name="customerHandler">customer handler class</param>
         public CustomersController(
-            ApplicationDbContext dbContext,
-            IConfiguration configuration,
             ICustomerManager customerManager,
             ICustomerHandler customerHandler)
         {
-            _dbContext = dbContext;
-            _configuration = configuration;
             _customerManager = customerManager;
             _customerHandler = customerHandler;
         }
@@ -110,17 +102,14 @@ namespace SprayAndPrayWeb.Controllers
         }
 
         /// <summary>
-        ///     Get Edit Customer
+        ///     Get Delete Customer
         /// </summary>
         /// <returns></returns>
         public IActionResult Delete(int? id)
         {
-            var customer = _dbContext.Customer.FirstOrDefault(x => x.Id == id);
+            var customer = _customerManager.GetCustomerById(id);
 
-            var hasValidCustomerOrId =
-                id != null ||
-                id != 0 ||
-                customer != null;
+            var hasValidCustomerOrId = _customerHandler.ValidateCustomerUpdate(customer, id);
 
             if (!hasValidCustomerOrId)
             {
