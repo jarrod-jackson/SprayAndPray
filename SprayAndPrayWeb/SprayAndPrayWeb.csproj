@@ -23,7 +23,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SprayAndPray.Business\SprayAndPray.Business.csproj" />
-    <ProjectReference Include="..\SprayAndPray.DAL\SprayAndPray.DAL.csproj" />
     <ProjectReference Include="..\SprayAndPray.Utilities\SprayAndPray.Utilities.csproj" />
   </ItemGroup>
 
