@@ -38,7 +38,6 @@ namespace SprayAndPray.Business.Tests
             yield return new object[] { null, null, false };
         }
         
-
         [Theory]
         [MemberData(nameof(ValidateCustomerUpdateTheoryData))]
         public void ValidateCustomerUpdate_ShouldReturnTrue_WhenCustomerAndIdArePopulated(
