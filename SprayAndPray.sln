@@ -5,13 +5,15 @@ VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SprayAndPrayWeb", "SprayAndPrayWeb\SprayAndPrayWeb.csproj", "{C0B361E0-0FA4-4DB2-9CD5-51047CBFA812}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SprayAndPray.DAL", "SprayAndPray.DAL\SprayAndPray.DAL.csproj", "{ED9AAF78-1DA0-4408-869A-84DF0A31A132}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SprayAndPray.DAL", "SprayAndPray.DAL\SprayAndPray.DAL.csproj", "{ED9AAF78-1DA0-4408-869A-84DF0A31A132}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SprayAndPray.Models", "SprayAndPray.Models\SprayAndPray.Models.csproj", "{E6B08137-81C4-4928-BF1F-1D758C71FF45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SprayAndPray.Models", "SprayAndPray.Models\SprayAndPray.Models.csproj", "{E6B08137-81C4-4928-BF1F-1D758C71FF45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SprayAndPray.Utilities", "SprayAndPray.Utilities\SprayAndPray.Utilities.csproj", "{BA16F047-284F-4484-902E-2F0DA7CC3453}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SprayAndPray.Utilities", "SprayAndPray.Utilities\SprayAndPray.Utilities.csproj", "{BA16F047-284F-4484-902E-2F0DA7CC3453}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SprayAndPray.Business", "SprayAndPray.Business\SprayAndPray.Business.csproj", "{6BF476B8-97D5-457A-B0C9-1F471620F228}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SprayAndPray.Business", "SprayAndPray.Business\SprayAndPray.Business.csproj", "{6BF476B8-97D5-457A-B0C9-1F471620F228}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SprayAndPray.Business.Tests", "SprayAndPray.Business.Tests\SprayAndPray.Business.Tests.csproj", "{2523DCF7-04C3-441C-8D2F-4104A4A140B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{6BF476B8-97D5-457A-B0C9-1F471620F228}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BF476B8-97D5-457A-B0C9-1F471620F228}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BF476B8-97D5-457A-B0C9-1F471620F228}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2523DCF7-04C3-441C-8D2F-4104A4A140B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2523DCF7-04C3-441C-8D2F-4104A4A140B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2523DCF7-04C3-441C-8D2F-4104A4A140B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2523DCF7-04C3-441C-8D2F-4104A4A140B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
