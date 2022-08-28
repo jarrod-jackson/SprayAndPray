@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SprayAndPray.DAL;
 
@@ -11,9 +12,10 @@ using SprayAndPray.DAL;
 namespace SprayAndPray.DAL
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220828000209_ADD_TABLES_Pricing_Services")]
+    partial class ADD_TABLES_Pricing_Services
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,12 +71,12 @@ namespace SprayAndPray.DAL
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("ServicesId")
+                    b.Property<int?>("ServicesID")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ServicesId");
+                    b.HasIndex("ServicesID");
 
                     b.ToTable("Pricing");
                 });
@@ -100,9 +102,7 @@ namespace SprayAndPray.DAL
                 {
                     b.HasOne("SprayAndPray.Models.Services", "Services")
                         .WithMany()
-                        .HasForeignKey("ServicesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ServicesID");
 
                     b.Navigation("Services");
                 });

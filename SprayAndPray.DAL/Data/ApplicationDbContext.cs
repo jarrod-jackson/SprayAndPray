@@ -15,5 +15,9 @@ namespace SprayAndPray.DAL
         }
 
         public DbSet<Customer> Customer { get; set; }
+
+        public DbSet<Services> Services { get; set; }
+
+        public DbSet<Pricing> Pricing { get; set; }
     }
 }

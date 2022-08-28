@@ -3,8 +3,9 @@ using SprayAndPray.Business;
 using SprayAndPray.Models;
 using SprayAndPrayWeb.Constants;
 
-namespace SprayAndPrayWeb.Controllers
+namespace SprayAndPrayWeb.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CustomersController : Controller
     {
         private readonly ICustomerManager _customerManager;

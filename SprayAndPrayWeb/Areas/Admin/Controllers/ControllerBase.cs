@@ -4,7 +4,7 @@ using System.Net;
 using System.Web.Http;
 using ILogger = SprayAndPrayWeb.Logging.ILogger;
 
-namespace SprayAndPrayWeb.Controllers
+namespace SprayAndPrayWeb.Areas.Admin.Controllers
 {
     public class ControllerBase : ApiController
     {

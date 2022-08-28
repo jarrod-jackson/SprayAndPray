@@ -12,7 +12,7 @@ namespace SprayAndPray.DAL.Data.Repository
         /// <summary>
         ///     Application DB Context
         /// </summary>
-        private ApplicationDbContext _dbContext;
+        private readonly ApplicationDbContext _dbContext;
 
         /// <summary>
         ///     Designated Constructor
@@ -21,10 +21,15 @@ namespace SprayAndPray.DAL.Data.Repository
         public Database(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
+
             Customer = new CustomerRepository(_dbContext);
+            Services = new ServicesRepository(_dbContext);
+            Pricing = new PricingRepository(_dbContext);
         }
 
         public ICustomerRepository Customer { get; private set; }
+        public IServicesRepository Services { get; private set; }
+        public IPricingRepository Pricing { get; private set; }
 
         public void Save()
         {
