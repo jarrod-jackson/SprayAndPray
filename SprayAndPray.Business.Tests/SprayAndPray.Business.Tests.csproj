@@ -28,4 +28,9 @@
 	<InternalsVisibleTo Include="..\SprayAndPrayWeb" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ServicesProvidedServicesTests\" />
+    <Folder Include="PricingServicesTests\" />
+  </ItemGroup>
+
 </Project>

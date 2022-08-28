@@ -24,9 +24,21 @@ namespace SprayAndPray.DAL.Data.Repository
             _dbContext = dbContext;
         }
 
-        public void Update(Services services)
+        public void Update(Services service)
         {
-            _dbContext.Update(services);
+            var dbServiceObject = _dbContext.Services.FirstOrDefault(s => s.Id == service.Id);
+
+            if (dbServiceObject != null)
+            {
+                dbServiceObject.Id = service.Id;
+                dbServiceObject.Name = service.Name;
+                dbServiceObject.Description = service.Description;
+
+                if(dbServiceObject.ImageUrl != null)
+                {
+                    dbServiceObject.ImageUrl = service.ImageUrl;
+                }
+            }
         }
     }
 }
