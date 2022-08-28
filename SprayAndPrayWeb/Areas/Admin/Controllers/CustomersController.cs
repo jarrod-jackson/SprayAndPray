@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SprayAndPray.Business;
+using SprayAndPray.Business.CustomerServices;
 using SprayAndPray.Models;
 using SprayAndPrayWeb.Constants;
 
@@ -8,20 +8,23 @@ namespace SprayAndPrayWeb.Areas.Admin.Controllers
     [Area("Admin")]
     public class CustomersController : Controller
     {
+        #region Private Variables
+        /// <summary>
+        ///     Customer Manager Service
+        /// </summary>
         private readonly ICustomerManager _customerManager;
-        private readonly ICustomerHandler _customerHandler;
+
+        #endregion Private Variables
+
 
         /// <summary>
         ///     Designated Constructor
         /// </summary>
         /// <param name="customerManager">customer manager class</param>
-        /// <param name="customerHandler">customer handler class</param>
         public CustomersController(
-            ICustomerManager customerManager,
-            ICustomerHandler customerHandler)
+            ICustomerManager customerManager)
         {
             _customerManager = customerManager;
-            _customerHandler = customerHandler;
         }
 
         /// <summary>
@@ -71,7 +74,7 @@ namespace SprayAndPrayWeb.Areas.Admin.Controllers
         {
             var customer = _customerManager.GetCustomerById(id);
 
-            var hasValidCustomerOrId = _customerHandler.ValidateCustomerUpdate(customer, id);
+            var hasValidCustomerOrId = _customerManager.ValidateCustomerUpdate(customer, id);
 
             if (!hasValidCustomerOrId)
             {
@@ -108,7 +111,7 @@ namespace SprayAndPrayWeb.Areas.Admin.Controllers
         {
             var customer = _customerManager.GetCustomerById(id);
 
-            var hasValidCustomerOrId = _customerHandler.ValidateCustomerUpdate(customer, id);
+            var hasValidCustomerOrId = _customerManager.ValidateCustomerUpdate(customer, id);
 
             if (!hasValidCustomerOrId)
             {

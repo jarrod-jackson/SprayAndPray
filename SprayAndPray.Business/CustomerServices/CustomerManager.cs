@@ -1,4 +1,4 @@
-﻿using SprayAndPray.DAL;
+﻿using SprayAndPray.Business.CustomerServices;
 using SprayAndPray.DAL.Data.Repository.IRepository;
 using SprayAndPray.Models;
 
@@ -17,13 +17,25 @@ namespace SprayAndPray.Business
         /// <summary>
         ///     Designated Constructor
         /// </summary>
-        /// <param name="unitOfWork">global unit of work</param>
+        /// <param name="database">global unit of work</param>
         public CustomerManager(
-            IDatabase unitOfWork)
+            IDatabase database)
         {
-            _database = unitOfWork;
+            _database = database;
         }
 
+        #region Public Methods
+
+        public bool ValidateCustomerUpdate(
+            Customer? customer,
+            int? id)
+        {
+            return id != null && id != 0 && customer != null;
+        }
+
+        #endregion Public Methods
+
+        #region Data Methods
         public void SaveCustomerInput(Customer customer)
         {
             _database.Customer.Add(customer);
@@ -51,5 +63,7 @@ namespace SprayAndPray.Business
         {
             return _database.Customer.GetAll();
         }
+
+        #endregion Data Methods
     }
 }

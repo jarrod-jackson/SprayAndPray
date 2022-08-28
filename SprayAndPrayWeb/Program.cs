@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using SprayAndPray.Business;
+using SprayAndPray.Business.CustomerServices;
+using SprayAndPray.Business.PricingServices;
+using SprayAndPray.Business.ServicesProvidedServices;
 using SprayAndPray.DAL;
 using SprayAndPray.DAL.Data.Repository;
 using SprayAndPray.DAL.Data.Repository.IRepository;
@@ -17,8 +20,10 @@ options.UseSqlServer(
     ));
 
 builder.Services.AddScoped<ICustomerManager, CustomerManager>();
-builder.Services.AddScoped<ICustomerHandler, CustomerHandler>();
+builder.Services.AddScoped<IPricingManager, PricingManager>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IServicesManager, ServicesManager>();
+
 builder.Services.AddScoped<IDatabase, Database>();
 
 var app = builder.Build();

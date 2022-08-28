@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Pricing</a>
+                  <a class="nav-link" asp-area="General" asp-controller="Services" asp-action="Index">Services</a>
                 </li>
                 <li class="nav-item text-end">
                   <a class="nav-link" href="#">About</a>
@@ -42,6 +42,7 @@
                   <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
                   <div class="dropdown-menu">
                     <a class="dropdown-item" asp-area="Admin" asp-controller="Customers" asp-action="Index">Customers</a>
+                    <a class="dropdown-item" asp-area="Admin" asp-controller="Pricing" asp-action="Index">Pricing</a>
                     <div class="dropdown-divider"></div>
                   </div>
                 </li>

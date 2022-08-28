@@ -1,9 +1,13 @@
 ﻿using SprayAndPray.Models;
 
-namespace SprayAndPray.Business
+namespace SprayAndPray.Business.CustomerServices
 {
     public interface ICustomerManager
     {
+        bool ValidateCustomerUpdate(Customer? customer, int? id);
+
+        #region Data Methods
+
         /// <summary>
         ///     Saves user input from Customers page to DB
         /// </summary>
@@ -34,5 +38,7 @@ namespace SprayAndPray.Business
         /// </summary>
         /// <returns>IEnumerable of Customers</returns>
         public IEnumerable<Customer> GetCustomers();
+
+        #endregion Data Methods
     }
 }

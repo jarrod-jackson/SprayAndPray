@@ -2,32 +2,32 @@ using SprayAndPray.Models;
 using Xunit;
 using Moq;
 
-namespace SprayAndPray.Business.Tests
+namespace SprayAndPray.Business.Tests.CustomerServicesTests
 {
     /// <summary>
-    ///     Tests for <see cref="CustomerHandler"/>
+    ///     Tests for <see cref="CustomerManager"/>
     /// </summary>
-    public class CustomerHandlerTests : IClassFixture<CustomerHandler>
+    public class CustomerManagerTests : IClassFixture<CustomerManager>
     {
         /// <summary>
-        ///     Customer Handler Class
+        ///     Customer Manager Class
         /// </summary>
-        private readonly CustomerHandler _mockCustomerHandler;
+        private readonly CustomerManager _mockCustomerManager;
 
         /// <summary>
         ///     Desiganted Constructor
         /// </summary>
-        /// <param name="mockCustomerHandler"></param>
-        public CustomerHandlerTests(
-            CustomerHandler mockCustomerHandler)
+        /// <param name="mockCustomerManager"></param>
+        public CustomerManagerTests(
+            CustomerManager mockCustomerHandler)
         {
-            _mockCustomerHandler = mockCustomerHandler;
+            _mockCustomerManager = mockCustomerHandler;
         }
 
         /// <summary>
         ///     Theory Data for <see cref="ValidateCustomerUpdate_ShouldReturnTrue_WhenCustomerAndIdArePopulated(int?, Customer?, bool)"/>
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Theory Data</returns>
         public static IEnumerable<object[]> ValidateCustomerUpdateTheoryData()
         {
             yield return new object[] { 1, GetCustomer(), true };
@@ -37,7 +37,7 @@ namespace SprayAndPray.Business.Tests
             yield return new object[] { 0, null, false };
             yield return new object[] { null, null, false };
         }
-        
+
         [Theory]
         [MemberData(nameof(ValidateCustomerUpdateTheoryData))]
         public void ValidateCustomerUpdate_ShouldReturnTrue_WhenCustomerAndIdArePopulated(
@@ -52,7 +52,7 @@ namespace SprayAndPray.Business.Tests
             var expectedResult = expectedOutcome;
 
             // Act
-            var actualResult = _mockCustomerHandler.ValidateCustomerUpdate(customer, idBeingPassedIntoMethod);
+            var actualResult = _mockCustomerManager.ValidateCustomerUpdate(customer, idBeingPassedIntoMethod);
 
             // Assert
             Assert.Equal(expectedResult, actualResult);

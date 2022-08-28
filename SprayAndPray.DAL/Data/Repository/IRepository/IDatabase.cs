@@ -10,6 +10,10 @@ namespace SprayAndPray.DAL.Data.Repository.IRepository
     {
         ICustomerRepository Customer { get; }
 
+        IPricingRepository Pricing { get; }
+
+        IServicesRepository Services { get; }
+
         void Save();
     }
 }
