@@ -10,7 +10,7 @@ namespace SprayAndPray.DAL.Data.Repository.IRepository
     public interface IPricingRepository : IRepository<Pricing>
     {
         /// <summary>
-        ///     Update Customer record
+        ///     Update Pricing record
         /// </summary>
         /// <param name="pricing">customer dto</param>
         void Update(Pricing pricing);
