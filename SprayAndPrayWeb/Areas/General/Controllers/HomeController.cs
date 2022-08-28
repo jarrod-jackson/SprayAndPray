@@ -2,8 +2,9 @@
 using SprayAndPray.Models;
 using System.Diagnostics;
 
-namespace SprayAndPrayWeb.Controllers
+namespace SprayAndPrayWeb.Areas.General.Controllers
 {
+    [Area("General")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
