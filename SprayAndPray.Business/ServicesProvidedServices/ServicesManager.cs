@@ -1,7 +1,10 @@
-﻿using SprayAndPray.DAL.Data.Repository.IRepository;
+﻿using Microsoft.IdentityModel.Tokens;
+using SprayAndPray.Business.Dtos;
+using SprayAndPray.DAL.Data.Repository.IRepository;
 using SprayAndPray.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +40,7 @@ namespace SprayAndPray.Business.ServicesProvidedServices
         #endregion Public Methods
 
         #region Data Methods
+
         public void SaveServiceInput(Services service)
         {
             _database.Services.Add(service);
@@ -65,6 +69,40 @@ namespace SprayAndPray.Business.ServicesProvidedServices
             return _database.Services.GetAll();
         }
 
+        public List<ServicePricingDto> GetServicesAndPricing()
+        {
+            _database.Services.GetAll();
+
+            var prices = _database.Pricing.GetAll().ToList();
+
+            var dtoList = GetDtoList(prices);
+
+            return dtoList;
+        }
         #endregion Data Methods
+
+        #region Private Methods
+
+        /// <summary>
+        ///     Refactored from <see cref="GetServicesAndPricing()"> for demonstration purposes.
+        /// </summary>
+        /// <param name="prices">list of db pricing object</param> 
+        /// <returns>List<ServicePricingDto></returns>
+        private List<ServicePricingDto> GetDtoList(List<Pricing> prices)
+        {
+            var dtoList = prices
+             .Where(p => p.Services != null)
+             .Select(p => new ServicePricingDto()
+             {
+                 Id = p.ServicesId,
+                 Name = p.Services.Name,
+                 Description = p.Services.Description,
+                 Price = p.Price,
+                 BundledPrice = p.BundledPrice
+             }
+         ).ToList();
+            return dtoList;
+        }
+        #endregion Private Methods
     }
 }

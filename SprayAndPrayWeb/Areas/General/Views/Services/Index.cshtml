@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Services>
+﻿@using SprayAndPray.Business.Dtos
+@model List<ServicePricingDto>
 @{
     ViewData["Title"] = "Index";
 }
@@ -21,6 +22,7 @@
             <tr>
                 <th>Service</th>
                 <th>Price</th>
+                <th>Bundled Price</th>
                 <th>Description</th>
                 <th width="5">Edit</th>
                 <th width="5">Delete</th>
@@ -34,7 +36,10 @@
                         @service.Name
                     </td>
                     <td>
-                        @*@service.""*@
+                        @service.Price
+                    </td>
+                    <td>
+                        @service.BundledPrice
                     </td>
                     <td>
                         @service.Description
