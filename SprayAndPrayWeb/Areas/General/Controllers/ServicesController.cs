@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SprayAndPray.Business.Dtos;
 using SprayAndPray.Business.ServicesProvidedServices;
 using SprayAndPray.Models;
 using SprayAndPrayWeb.Constants;
@@ -41,7 +42,7 @@ namespace SprayAndPrayWeb.Areas.General.Controllers
         /// <returns></returns>
         public IActionResult Index()
         {
-            var servicesList = _servicesManager.GetServices();
+            var servicesList = _servicesManager.GetServicesAndPricing();
 
             return View(servicesList);
         }

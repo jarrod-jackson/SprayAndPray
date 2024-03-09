@@ -1,4 +1,5 @@
-﻿using SprayAndPray.Models;
+﻿using SprayAndPray.Business.Dtos;
+using SprayAndPray.Models;
 
 namespace SprayAndPray.Business.ServicesProvidedServices
 {
@@ -38,6 +39,8 @@ namespace SprayAndPray.Business.ServicesProvidedServices
         /// </summary>
         /// <returns>IEnumerable of Services</returns>
         public IEnumerable<Services> GetServices();
+
+        public List<ServicePricingDto> GetServicesAndPricing();
 
         #endregion Data Methods
     }
